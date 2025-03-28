@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 27 mrt 2025 om 08:54
--- Serverversie: 8.2.0
--- PHP-versie: 8.2.13
+-- Generation Time: Mar 28, 2025 at 10:36 PM
+-- Server version: 8.2.0
+-- PHP Version: 8.2.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `fileuploader`
+-- Database: `beveiligd_wachtwoord_db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `users`
+-- Table structure for table `users`
 --
 
 DROP TABLE IF EXISTS `users`;
@@ -35,16 +35,21 @@ CREATE TABLE IF NOT EXISTS `users` (
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `role` enum('user','admin') DEFAULT 'user',
+  `role` int DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `users`
+-- Dumping data for table `users`
 --
 
+INSERT INTO `users` (`id`, `username`, `email`, `firstname`, `lastname`, `password`, `role`) VALUES
+(1, 'Abd', 'Abd@gmail.com', 'Abd', 'Abd', '$2y$10$.q/3DiQiRYWGI8qNRaad/.sO7w8mYbbld2MUl.B.svCw6Nh0Hratu', 1),
+(4, 'aa', 'a.alyouins17200@gmail.com', 'aa', 'aa', '$2y$10$76LmpF4tO3AlkAYk72TfRuqKlGklDFiUwAIiWRcf8k1JtAYAkPqby', 1),
+(3, 'tt', 'tt@gamil.com', 'tt', 'tt', '$2y$10$P7oFcu/by4FapTceMvxH8.WO3ila2zZ0AIJJfWbupnwAXSzRcWJ/O', 1),
+(5, 'serbaker', 'vlasov.nik45@yandex.ru', 'Nikita', 'Vlasov', '$2y$10$da7vGsq7xJFvh79zp7hCRujCfRULCkEpj7XRDnFkzoi.Cyh/MBtC.', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
