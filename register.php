@@ -4,10 +4,10 @@ require 'config.php';
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username  = trim($_POST['username']);
-    $email     = trim($_POST['email']);
-    $firstname = trim($_POST['firstname']);
-    $lastname  = trim($_POST['lastname']);
+    $username  = htmlspecialchars($_POST['username']);
+    $email     = htmlspecialchars(trim($_POST['email']));
+    $firstname = htmlspecialchars($_POST['firstname']);
+    $lastname  = htmlspecialchars($_POST['lastname']);
     $password  = $_POST['password'];
 
     // Validatie

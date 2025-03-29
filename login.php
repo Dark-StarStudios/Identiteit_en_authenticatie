@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user'] = $user['username'];
         $_SESSION['email'] = $user['email'];
         $_SESSION['2fa_verified'] = false; // reset
+        $_SESSION['role'] = $user['role'];
         header('Location: send_code.php'); // let op!
         exit;
     } else {

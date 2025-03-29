@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 28, 2025 at 10:36 PM
+-- Generation Time: Mar 29, 2025 at 02:24 PM
 -- Server version: 8.2.0
 -- PHP Version: 8.2.13
 
@@ -24,27 +24,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rols`
+-- Table structure for table `posts`
 --
 
-DROP TABLE IF EXISTS `rols`;
-CREATE TABLE IF NOT EXISTS `rols` (
+DROP TABLE IF EXISTS `posts`;
+CREATE TABLE IF NOT EXISTS `posts` (
   `ID` int NOT NULL AUTO_INCREMENT,
-  `naam` varchar(255) NOT NULL,
-  `omschrijving` varchar(1000) NOT NULL,
-  `rechten_nivea` int NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `text` varchar(10000) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data for table `rols`
+-- Dumping data for table `posts`
 --
 
-INSERT INTO `rols` (`ID`, `naam`, `omschrijving`, `rechten_nivea`) VALUES
-(1, 'user', 'Kan alleen lezen', 1),
-(2, 'creator', 'Kan lezen en toevoegen', 2),
-(3, 'moderator', 'Kan lezen, toevoegen en veranderen.', 3),
-(4, 'admin', 'kan alles. CRUD', 4);
+INSERT INTO `posts` (`ID`, `title`, `text`) VALUES
+(1, 'test', 'Het is test post'),
+(2, 'test2', 'Het is test post2');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
